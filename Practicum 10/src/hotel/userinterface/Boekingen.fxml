@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hotel.userinterface.BoekingenController">
+
+    <center>
+        <VBox spacing="10" alignment="center" prefWidth="400" prefHeight="300"> <!-- Set your preferred width and height here -->
+            <HBox spacing="10">
+                <Label text="Naam:"/>
+                <TextField fx:id="naamTextField"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Adres:"/>
+                <TextField fx:id="adresTextField"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Aankomstdatum:"/>
+                <DatePicker fx:id="aankomstDatePicker"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Vertrekdatum:"/>
+                <DatePicker fx:id="vertrekDatePicker"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Kamertype:"/>
+                <ComboBox fx:id="kamertypeComboBox"/>
+            </HBox>
+            <HBox spacing="10">
+                <Button text="Reset" onAction="#resetForm"/>
+                <Button text="Boek" fx:id="boekButton" onAction="#handleBoekButtonAction"/>
+            </HBox>
+
+            <Label fx:id="errorLabel" textFill="red"/>
+        </VBox>
+    </center>
+</BorderPane>
