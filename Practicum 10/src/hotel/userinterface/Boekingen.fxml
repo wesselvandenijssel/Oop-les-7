@@ -13,34 +13,42 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="hotel.userinterface.BoekingenController">
 
+    <top>
+        <VBox spacing="5" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+            <Label text="Voer uw gegevens in!"/>
+        </VBox>
+    </top>
+
     <center>
-        <VBox spacing="10" alignment="center" prefWidth="400" prefHeight="300"> <!-- Set your preferred width and height here -->
-            <HBox spacing="10">
-                <Label text="Naam:"/>
-                <TextField fx:id="naamTextField"/>
+        <VBox spacing="20" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <VBox spacing="25">
+                    <Label text="Naam:"/>
+                    <Label text="Adres:"/>
+                    <Label text="Aankomstdatum:"/>
+                    <Label text="Vertrekdatum:"/>
+                    <Label text="Kamertype:"/>
+                </VBox>
+                <VBox spacing="15">
+                    <TextField fx:id="naamTextField"/>
+                    <TextField fx:id="adresTextField"/>
+                    <DatePicker fx:id="aankomstDatePicker" style="-fx-pref-width: 220px"/>
+                    <DatePicker fx:id="vertrekDatePicker" style="-fx-pref-width: 220px"/>
+                    <ComboBox fx:id="kamertypeComboBox"/>
+                </VBox>
             </HBox>
-            <HBox spacing="10">
-                <Label text="Adres:"/>
-                <TextField fx:id="adresTextField"/>
-            </HBox>
-            <HBox spacing="10">
-                <Label text="Aankomstdatum:"/>
-                <DatePicker fx:id="aankomstDatePicker"/>
-            </HBox>
-            <HBox spacing="10">
-                <Label text="Vertrekdatum:"/>
-                <DatePicker fx:id="vertrekDatePicker"/>
-            </HBox>
-            <HBox spacing="10">
-                <Label text="Kamertype:"/>
-                <ComboBox fx:id="kamertypeComboBox"/>
-            </HBox>
-            <HBox spacing="10">
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
                 <Button text="Reset" onAction="#resetForm"/>
                 <Button text="Boek" fx:id="boekButton" onAction="#handleBoekButtonAction"/>
             </HBox>
 
-            <Label fx:id="errorLabel" textFill="red"/>
         </VBox>
     </center>
+
+    <bottom>
+        <Label fx:id="errorLabel" textFill="red"/>
+    </bottom>
+
 </BorderPane>
